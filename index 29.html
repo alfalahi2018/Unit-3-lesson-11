@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Unit 3 · Lesson 11 · Get ready for... Exam practice</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<style>
+:root{--board:#101828;--amber:#FFB000;--green:#2ECC71;--red:#FF4D4D;--sky:#4DA3FF;--paper:#FFFFFF;--ink:#101828}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;font-family:'Baloo 2',system-ui,sans-serif;color:var(--ink);padding:14px;background:linear-gradient(180deg,#1B2A4A 0%,#2C4A7A 55%,#7FB2E8 100%) fixed;overflow-x:hidden}
+.rw{position:fixed;left:0;right:0;bottom:0;height:90px;z-index:0;pointer-events:none;background:linear-gradient(180deg,#2a2f3a,#14171e);border-top:6px solid #555}
+.rw:before{content:"";position:absolute;left:0;right:0;top:40px;border-top:5px dashed #fff;opacity:.8;animation:rwm 2s linear infinite}
+@keyframes rwm{to{background-position:60px 0}}
+.jet{position:fixed;z-index:0;pointer-events:none;animation:fly linear infinite}
+@keyframes fly{from{left:-140px}to{left:110%}}
+.wrap{position:relative;z-index:1;max-width:1040px;margin:0 auto;display:flex;flex-direction:column;gap:14px;padding-bottom:70px}
+button{font-family:inherit;cursor:pointer}button:focus-visible{outline:4px solid var(--amber);outline-offset:2px}
+.top{background:var(--board);color:var(--amber);border:4px solid #fff;border-radius:14px;padding:12px 22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;box-shadow:0 0 0 4px #000,0 8px 0 #0008}
+.top small{font-family:'Share Tech Mono',monospace;letter-spacing:2px;color:#9DB4FF;font-size:15px}.top h1{margin:0;font-family:'Share Tech Mono',monospace;font-weight:400;font-size:clamp(24px,4vw,38px);letter-spacing:2px;text-shadow:0 0 12px #FFB00088}
+.top .tt{display:flex;gap:14px;align-items:center}
+.badge{background:var(--amber);color:var(--board);border:3px solid #fff;border-radius:8px;padding:2px 14px;font-family:'Share Tech Mono',monospace;font-size:22px;display:inline-flex;gap:8px;align-items:center}
+.fl{position:relative;height:60px;margin:0 8px}
+.fl .trk{position:absolute;left:8px;right:8px;top:40px;border-top:5px dashed #ffffffaa}
+.fl .st{position:absolute;top:32px;width:22px;height:22px;border-radius:5px;background:#101828;border:3px solid #fff;margin-left:-11px;color:#fff;font-size:11px;display:flex;align-items:center;justify-content:center;font-family:'Share Tech Mono',monospace}.fl .st.on{background:var(--amber);color:var(--board)}
+.fl .pl{position:absolute;top:-4px;transition:left .9s cubic-bezier(.5,1.4,.5,1);margin-left:-28px}
+.nav{display:flex;gap:8px;flex-wrap:wrap;align-items:center;color:#fff}.nav span{font-family:'Share Tech Mono',monospace;color:var(--amber);font-size:18px}
+.nav button{border:3px solid #fff;background:#101828;color:var(--amber);border-radius:8px;padding:5px 14px;font-size:15px;font-family:'Share Tech Mono',monospace;transition:transform .12s}
+.nav button:hover{transform:translateY(-2px)}.nav button.on{background:var(--amber);color:var(--board)}
+.card{background:var(--paper);border:4px solid var(--board);border-radius:18px;padding:clamp(16px,3vw,28px);display:flex;flex-direction:column;gap:14px;box-shadow:0 8px 0 #0008;animation:pop .45s;position:relative;overflow:hidden}
+.card:before{content:"";position:absolute;left:0;right:0;top:0;height:14px;background:repeating-linear-gradient(135deg,var(--amber) 0 16px,var(--board) 16px 32px)}
+.card>*:first-child{margin-top:12px}
+.card h2{margin:0;font-size:clamp(20px,3vw,28px)}
+.meta{display:flex;justify-content:space-between;font-weight:800;font-size:18px;flex-wrap:wrap;gap:6px;padding-bottom:8px;border-bottom:4px dashed #101828}
+.meta .mono{font-family:'Share Tech Mono',monospace}
+.q{font-size:clamp(21px,3.2vw,30px);font-weight:800;line-height:1.3}.q b{color:#B3261E;background:#FFE3E0;border-radius:6px;padding:0 6px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.o{display:flex;align-items:center;justify-content:center;gap:12px;border:3px solid var(--board);background:#F3F7FF;color:var(--ink);border-radius:12px;padding:12px 16px;font-size:clamp(17px,2.4vw,23px);font-weight:700;box-shadow:0 5px 0 var(--board);transition:transform .12s}
+.o:hover:not(:disabled){transform:translateY(-3px);background:#FFF3D1}.o:active:not(:disabled){transform:translateY(3px);box-shadow:0 1px 0 var(--board)}
+.o.ok{background:#8FE8B1;animation:pop .4s}.o.bad{background:#FFB0A8;animation:shake .4s}.o:disabled{cursor:default}
+.fb{font-size:21px;font-weight:700;min-height:44px;display:flex;align-items:center;gap:10px}
+.seal{display:inline-flex;align-items:center;justify-content:center;min-width:96px;height:46px;border-radius:8px;background:var(--green);color:#fff;border:3px solid var(--board);font-family:'Share Tech Mono',monospace;font-size:18px;animation:stampin .4s;padding:0 10px;flex:none;letter-spacing:1px;text-align:center;line-height:1}.seal.no{background:var(--red)}
+.go{align-self:flex-end;background:var(--board);color:var(--amber);border:0;border-radius:10px;padding:12px 30px;font-size:21px;font-weight:800;box-shadow:0 5px 0 #000}
+.go.alt{background:var(--amber);color:var(--board);box-shadow:0 5px 0 #b37b00}.go[disabled]{opacity:.35}.go:active{transform:translateY(3px)}
+.row{display:flex;gap:12px;align-items:center;justify-content:flex-end;flex-wrap:wrap}
+.learn{background:#E3EEFF;border:3px solid var(--board);border-radius:12px;padding:10px 18px;font-size:19px}
+.scr{background:#FFF8E1;border:3px dashed var(--board);border-radius:12px;padding:10px 16px;font-size:clamp(16px,2.1vw,19px);line-height:1.6;max-height:240px;overflow:auto}.scr b{color:#B3261E}
+.sgn{border:4px solid var(--board);border-radius:12px;padding:14px 18px;font-size:clamp(17px,2.3vw,21px);line-height:1.5;background:#fff}
+.sgn.sms{background:#E8F5E9;border-radius:22px 22px 22px 4px}.sgn.cir{background:#FFF3C4;text-align:center;border-style:double;border-width:7px}.sgn.cir b{font-size:1.3em;color:#B3261E}.sgn.sec{background:var(--board);color:#fff;border-color:var(--amber)}.sgn.sec b{color:var(--amber)}
+.pic{align-self:center;max-width:420px;width:100%;border:4px solid var(--board);border-radius:14px;background:#fff}
+.rs{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}.rs div{border:3px solid var(--board);border-radius:12px;padding:8px 14px;background:#F3F7FF;font-weight:700}.rs div b{font-family:'Share Tech Mono',monospace;font-size:24px;color:#B3261E}
+.miss{background:#fff;border:3px dashed var(--board);border-radius:12px;padding:10px 16px;font-size:18px;line-height:1.7}.miss b{color:#0E7C3A}
+.credit{text-align:right;font-size:15px;font-weight:700;color:#fff;font-family:'Share Tech Mono',monospace}
+.big-stamp{align-self:center;font-family:'Share Tech Mono',monospace;font-size:clamp(40px,7vw,70px);color:var(--green);border:6px solid var(--green);border-radius:12px;padding:0 26px;transform:rotate(-4deg);animation:stampin .5s;background:#fff}
+@keyframes pop{0%{transform:scale(.96);opacity:.4}100%{transform:scale(1);opacity:1}}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-7px)}75%{transform:translateX(7px)}}
+@keyframes stampin{0%{transform:scale(2.2) rotate(-14deg);opacity:0}100%{transform:scale(1) rotate(-4deg);opacity:1}}
+</style></head><body>
+<svg class="jet" style="top:120px;animation-duration:38s;animation-delay:-0s" width="120" height="44" viewBox="0 0 120 44" aria-hidden="true" opacity=".9"><path d="M4 22L100 10 116 22 100 30z" fill="#fff" stroke="#101828" stroke-width="3" stroke-linejoin="round"/><path d="M44 20L30 4h12l20 14zM44 24L30 40h12l20-14z" fill="#4DA3FF" stroke="#101828" stroke-width="3" stroke-linejoin="round"/><circle cx="92" cy="20" r="3" fill="#101828"/><circle cx="80" cy="20" r="3" fill="#101828"/><circle cx="68" cy="20" r="3" fill="#101828"/></svg><svg class="jet" style="top:260px;animation-duration:52s;animation-delay:-25s" width="120" height="44" viewBox="0 0 120 44" aria-hidden="true" opacity=".9"><path d="M4 22L100 10 116 22 100 30z" fill="#fff" stroke="#101828" stroke-width="3" stroke-linejoin="round"/><path d="M44 20L30 4h12l20 14zM44 24L30 40h12l20-14z" fill="#4DA3FF" stroke="#101828" stroke-width="3" stroke-linejoin="round"/><circle cx="92" cy="20" r="3" fill="#101828"/><circle cx="80" cy="20" r="3" fill="#101828"/><circle cx="68" cy="20" r="3" fill="#101828"/></svg><div class="rw"></div>
+<div class="wrap">
+<div class="top"><div class="tt"><svg width="54" height="54" viewBox="0 0 54 54" aria-hidden="true"><path d="M20 50l4-24h6l4 24z" fill="#fff" stroke="#FFB000" stroke-width="3" stroke-linejoin="round"/><rect x="12" y="10" width="30" height="16" rx="4" fill="#4DA3FF" stroke="#FFB000" stroke-width="3"/><path d="M8 10h38" stroke="#FFB000" stroke-width="4" stroke-linecap="round"/><path d="M27 10V3" stroke="#FFB000" stroke-width="3" stroke-linecap="round"/></svg><div><small>DEPARTURES · UNIT 3 · TRAVEL · LESSON 11</small><h1>GET READY FOR... THE EXAM</h1></div></div><div style="text-align:right"><span class="badge"><svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7 7.5.6-5.7 5 1.8 7.4L12 18l-6.6 4 1.8-7.4-5.7-5L9 9z" fill="#101828"/></svg><span id="stars"></span></span><br><small style="color:#9DB4FF">Exam time: 25 minutes · marked out of 20</small></div></div>
+<div class="fl"><div class="trk"></div><div id="stations"></div><span class="pl" id="pl"><svg width="62" height="44" viewBox="0 0 62 44" aria-hidden="true"><path d="M3 22L52 8 60 22 52 30z" fill="#FFB000" stroke="#101828" stroke-width="3" stroke-linejoin="round"/><path d="M24 20L14 4h9l14 14zM24 24L14 40h9l14-16z" fill="#fff" stroke="#101828" stroke-width="3" stroke-linejoin="round"/></svg></span></div>
+<div class="nav" id="nav"></div>
+<div id="main"></div>
+<div class="credit">Created by T.Badria Alfalahi</div>
+</div>
+<script>
+const SCENE=`<svg class="pic" viewBox="0 0 300 200" role="img" aria-label="A woman at home looking out of the window at dark clouds"><rect width="300" height="200" fill="#F7EBD8"/><rect x="150" y="24" width="120" height="110" rx="6" fill="#5B6B80" stroke="#101828" stroke-width="5"/><path d="M210 24v110M150 79h120" stroke="#101828" stroke-width="4"/><g fill="#2D3748"><circle cx="175" cy="52" r="14"/><circle cx="194" cy="46" r="16"/><circle cx="188" cy="60" r="14"/><circle cx="235" cy="100" r="15"/><circle cx="252" cy="94" r="12"/><circle cx="244" cy="108" r="14"/></g><path d="M170 72l-6 14M188 76l-6 14M240 120l-6 12" stroke="#4DA3FF" stroke-width="3" stroke-linecap="round"/><circle cx="88" cy="70" r="20" fill="#FFD9B0" stroke="#101828" stroke-width="4"/><path d="M68 66a20 20 0 0 1 40 0c-8 6-30 6-40 0z" fill="#6B3E26"/><path d="M62 190v-70c0-18 52-18 52 0v70z" fill="#FF7E6B" stroke="#101828" stroke-width="4" stroke-linejoin="round"/><path d="M110 134l30-26" stroke="#FFD9B0" stroke-width="10" stroke-linecap="round"/><rect x="10" y="150" width="80" height="40" rx="6" fill="#B8935A" stroke="#101828" stroke-width="4"/></svg>`;
+const N=a=>a.map(t=>({t}));
+const EID=[['Muna','Did you enjoy Eid, Samira?'],['Samira','Yes, thanks, Muna. We went to my aunt’s house for dinner. She gave me this soap.'],['Muna','That smells nice. What about your parents? Did they give you anything?'],['Samira','My mum wanted to buy clothes for me. She chose this sweater.'],['Muna','That’s nice. What about your dad?'],['Samira','Well, you know I’m crazy about science …'],['Muna','Yes, I know!'],['Samira','He bought me these books, about animals and space and other interesting things.'],['Muna','They look good …'],['Samira','Yes ... but my favourite present was from my uncle.'],['Muna','What was it?'],['Samira','This camera. It’s fantastic!'],['Muna','You’re lucky! I’d love to have a camera like that. And how about your brother and sister?'],['Samira','Look, I’m wearing their presents! This belt is from my brother.'],['Muna','It’s the same as mine!'],['Samira','Yes, it is. And my sister gave me this bracelet.'],['Muna','You got some good presents!']];
+const PR=['A belt','B umbrella','C soap','D books','E bracelet','F sweater','G rucksack','H camera'];
+const pr4=(ans,others)=>{const o=[ans,...others];const k=PR.indexOf(ans)%4;const r=[...o.slice(k),...o.slice(0,k)];return N(r)};
+const D1=[['Girl','I heard you’re going to Shinas, Safiya. You’re so lucky!'],['Safiya','I know! I’ll only be there for three days, but I’m really excited.'],['Girl','It’s too bad you can’t stay longer. But I know you’ll love it.']];
+const D2=[['Saif','Oh, no! Not again!'],['Woman','What’s wrong? Have you forgotten your flip-flops, Saif?'],['Saif','No, I’ve got my flip-flops. But I left my washbag at home. This always happens when I pack too quickly.'],['Woman','Oh, that happens to me, too. What did you have in it? Soap and a toothbrush?'],['Saif','No, I had some medicines in the washbag, too. I’ll have to look for a pharmacy.']];
+const D3=[['Sara','I can’t wait for the summer holidays. It’s going to be so much fun!'],['Boy','Oh? Are you going somewhere special this year?'],['Sara','Yes. To my Aunt Zainab’s beach house, and I always have a great time.'],['Boy','Are you going to be there the whole summer, or only for part of the summer?'],['Sara','Just for the month of June, when the weather’s really warm and sunny.'],['Boy','You’re so lucky. I’d love to go there!']];
+const D4=[['Woman','Come on, Faris. You’re going to miss the bus.'],['Faris','OK, Mum. I’m ready. What time does the bus leave?'],['Woman','At two o’clock. And you’ll arrive in Muscat at half past four.'],['Faris','And will Grandma be waiting for me at the station?'],['Woman','No, your uncle Hassan will pick you up and take you to Grandma’s.']];
+const D5=[['Man','Well, we have to decide where to go on holiday this summer.'],['Woman','I know where I want to go ... New York! But that’s too expensive.'],['Man','Yes, it is! And what about Paris? You can practise your French.'],['Woman','That’s true. Or we could go to Greece. It’s quite cheap and Athens is beautiful.'],['Man','Yes, but if we go to Paris we could stay at your cousins’ flat.'],['Woman','You’re right. And we haven’t seen them for a long time. Let’s do that.']];
+const SM='<div class="sgn sms"><b>Nawaf,</b><br>Are you at the shop? My wallet is empty!<br>Please could you get a guidebook for me?<br>I want to read about the paintings.<br><b>Zahran</b></div>';
+const CI='<div class="sgn cir"><b>Mudrik’s Amazing Circus</b> starts today!<br>Buy your tickets here or on our website.<br>Special offer: half-price tickets for the performance on Monday! <b>Only 10 rials!</b><br>Take your seats at 5.30 p.m. · Performance at 6 p.m.</div>';
+const SE='<div class="sgn sec"><b>Please take off your coat here.</b><br>Put laptops, tablets and mobile phones in a grey box.<br>You don’t have to take off your shoes.</div>';
+const A=[
+{n:'1 · Exam tips',min:3,type:'mc',q:[
+{pr:'Exam tip for <b>Listening Part 5</b>: what should you do first?',o:N(['Read all the words carefully, so you know what words you’re going to hear.','Close your eyes.','Write the answers before the audio.']),a:0},
+{pr:'Exam tip for <b>Reading and Writing Part 1</b>: what can help you understand a text?',o:N(['Look at each text before you read. Think: where might I see a text like this?','Read only the last line.','Skip the texts.']),a:0},
+{pr:'Exam tip for <b>Listening Part 1</b>: what should you listen for?',o:N(['Every single word','The gist meaning, then choose the best option','Only the numbers']),a:1}]},
+{n:'2 · Listening Part 5',min:5,type:'mc',lines:EID,info:'<b>A2 Key for Schools Listening Part 5.</b> You will hear Samira talking to Muna about Eid. What present did each person give her?',q:[
+{pr:'Her <b>aunt</b> gave her ...',o:pr4('C soap',['F sweater','A belt','H camera']),a:0},
+{pr:'Her <b>mum</b> gave her ...',o:pr4('F sweater',['B umbrella','G rucksack','C soap']),a:0},
+{pr:'Her <b>dad</b> gave her ...',o:pr4('D books',['E bracelet','B umbrella','F sweater']),a:0},
+{pr:'Her <b>uncle</b> gave her ...',o:pr4('H camera',['A belt','D books','G rucksack']),a:0},
+{pr:'Her <b>brother</b> gave her ...',o:pr4('A belt',['C soap','E bracelet','B umbrella']),a:0},
+{pr:'Her <b>sister</b> gave her ...',o:pr4('E bracelet',['G rucksack','D books','H camera']),a:0}]},
+{n:'3 · Reading Part 1',min:5,type:'mc',info:'<b>A2 Key for Schools Reading and Writing Part 1.</b> For each question, choose the correct answer.',q:[
+{html:SM,pr:'What does the message say?',o:N(['Zahran wants Nawaf’s guidebook.','Zahran doesn’t have any money.','Zahran often reads about paintings.']),a:1,ex:'“My wallet is empty!”'},
+{html:CI,pr:'What does the notice say?',o:N(['You can go to the circus for 5 rials on Monday.','You have to go online to buy tickets.','The circus starts at 5.30 p.m.']),a:0,ex:'Tickets are 10 rials and Monday’s performance has half-price tickets: 5 rials.'},
+{html:SE,pr:'What does the sign say?',o:N(['You can wear your coat.','There are boxes to put devices in.','You mustn’t take off your shoes.']),a:1,ex:'“Put laptops, tablets and mobile phones in a grey box.”'}]},
+{n:'4 · Listening Part 1',min:6,type:'mc',info:'<b>A2 Key for Schools Listening Part 1 / A2 Flyers Listening Part 4.</b> Read the task carefully. Listen and choose the correct answer.',q:[
+{lines:D1,pr:'<b>Try!</b> How many days will Safiya be in Shinas?',o:N(['A One day','B Three days','C Five days']),a:1,ex:'“I’ll only be there for three days.”'},
+{lines:D2,pr:'What did Saif forget to put in his suitcase?',o:N(['A His flip-flops','B His washbag with medicines','C His toothbrush']),a:1,ex:'“I left my washbag at home.”'},
+{lines:D3,pr:'When is Sara going to visit her aunt?',o:N(['A In May','B In July','C In June']),a:2,ex:'“Just for the month of June.”'},
+{lines:D4,pr:'Who is meeting Faris at the bus station?',o:N(['A His grandma','B His mum','C His uncle Hassan']),a:2,ex:'“Your uncle Hassan will pick you up.”'},
+{lines:D5,pr:'Where are the man and woman going to go on holiday?',o:N(['A New York','B Athens','C Paris']),a:2,ex:'“If we go to Paris we could stay at your cousins’ flat.”'}]},
+{n:'5 · Reading and Writing Part 7',min:3,type:'mc',info:'<b>A2 Key for Schools Reading and Writing Part 7.</b> Look at the picture. Answer the questions.',q:[
+{html:'SCENE',pr:'Where is the woman?',o:N(['She is at home.','She is at the airport.','She is at school.']),a:0},
+{html:'SCENE',pr:'What is she doing?',o:N(['She is packing her suitcase.','She is looking out the window.','She is cooking.']),a:1},
+{html:'SCENE',pr:'What can she see?',o:N(['She can see the sea.','She can see a rocket.','She can see dark clouds / bad weather / a storm.']),a:2}]},
+{n:'6 · Results',min:3,type:'res'}];
+A[1].q.forEach((q,i)=>{q.a=q.o.findIndex(x=>x.t===['C soap','F sweater','D books','H camera','A belt','E bracelet'][i])});
+const RS=5;
+const GR=[[18,'A+','Excellent! You are ready for the exam!'],[15,'A','Very good! Just a little more practice.'],[12,'B','Good work! Review the missed questions.'],[9,'C','Pass. Practise the parts below again.'],[0,'D','Keep practising! Try each part again.']];
+const nst=()=>({i:0,pk:null,sc:0,done:false,res:{},sh:false});
+let S={step:0,st:A.map(nst),rev:null};
+let ac;function tone(f,d,ty){try{ac=ac||new(window.AudioContext||window.webkitAudioContext)();f.forEach((hz,i)=>{const o=ac.createOscillator(),g=ac.createGain();o.type=ty||'sine';o.frequency.value=hz;const t=ac.currentTime+i*d;g.gain.setValueAtTime(.18,t);g.gain.exponentialRampToValueAtTime(.001,t+d);o.connect(g);g.connect(ac.destination);o.start(t);o.stop(t+d)})}catch(e){}}
+function playL(L){try{speechSynthesis.cancel();L.forEach(l=>{const u=new SpeechSynthesisUtterance(l[1]);u.lang='en-GB';u.rate=.9;u.pitch=l[0]===L[0][0]?1.35:.85;speechSynthesis.speak(u)})}catch(e){}}
+const GOOD=()=>tone([523,659,784,1047],.1,'triangle'),BAD=()=>tone([220,160],.2,'sawtooth');
+function go(k){tone([523,659],.1);try{speechSynthesis.cancel()}catch(e){}S.step=k;S.rev=null;render()}
+function cur(){const a=A[S.step];return S.rev?S.rev.list[S.rev.i]:{a,s:S.st[S.step],q:a.q[S.st[S.step].i]}}
+function lines(){const a=A[S.step];if(S.rev){const r=S.rev.list[S.rev.i];playL(r.q.lines||r.a.lines);return}const s=S.st[S.step],q=a.q[s.i];playL(q.lines||a.lines)}
+function scr(){S.st[S.step].sh=!S.st[S.step].sh;render()}
+function pick(i){if(S.rev){const r=S.rev;if(r.pk!==null)return;r.pk=i;r.q=r.list[r.i].q;(i===r.q.a)?GOOD():BAD();render();return}const s=S.st[S.step],q=A[S.step].q[s.i];if(s.pk!==null)return;s.pk=i;const ok=i===q.a;s.res[s.i]=ok;if(ok){s.sc++;GOOD()}else BAD();render()}
+function nxt(){if(S.rev){const r=S.rev;if(r.pk===null)return;if(r.i+1<r.list.length){r.i++;r.pk=null}else{r.done=true;tone([523,659,784,1047],.14,'triangle')}render();return}const s=S.st[S.step],a=A[S.step];if(s.pk===null)return;if(s.i+1<a.q.length){s.i++;s.pk=null}else{s.done=true;tone([523,659,784,1047],.14,'triangle')}render()}
+function retry(){S.st[S.step]=nst();tone([440,523],.1);render()}
+function missed(){const L=[];A.slice(0,RS).forEach((a,k)=>a.q.forEach((q,i)=>{if(S.st[k].res[i]===false)L.push({a,q,k})}));return L}
+function startRev(){const L=missed();if(!L.length)return;S.rev={list:L,i:0,pk:null,done:false};tone([392,523,659],.1);render()}
+function endRev(){S.rev=null;render()}
+function total(){return S.st.slice(0,RS).reduce((x,y)=>x+y.sc,0)}
+function stars(){return total()}
+function sec(k){const a=A[k],s=S.st[k];return {n:a.n,m:s.sc,t:a.q.length,d:Object.keys(s.res).length}}
+function qcard(a,q,s,lk,pkv,n,i,rev){
+ const ok=lk&&pkv===q.a;
+ const au=(q.lines||a.lines)?'<div class="row" style="justify-content:flex-start"><button class="go alt" style="padding:8px 24px;font-size:18px" onclick="lines()">▶ Play the audio</button>'+(rev?'':'<button class="go" style="padding:8px 24px;font-size:18px" onclick="scr()">'+(s.sh?'Hide':'Show')+' the script</button>')+'</div>'+((!rev&&s.sh)?'<div class="scr">'+(q.lines||a.lines).map(l=>'<b>'+l[0]+':</b> '+l[1]).join('<br>')+'</div>':''):'';
+ const ht=q.html?(q.html==='SCENE'?SCENE:q.html):'';
+ return (a.info&&!rev?'<div class="learn">'+a.info+'</div>':'')+au+ht+'<div class="q">'+q.pr+'</div><div class="grid">'+q.o.map((o,j)=>'<button class="o'+(lk&&j===q.a?' ok':lk&&j===pkv?' bad':'')+'" '+(lk?'disabled':'')+' onclick="pick('+j+')"><span>'+o.t+'</span></button>').join('')+'</div><div class="fb">'+(lk?'<span class="seal'+(ok?'':' no')+'">'+(ok?'CLEARED':'RECHECK')+'</span><span>The answer is: '+q.o[q.a].t+'. '+(q.ex||'')+'</span>':'Choose the correct answer.')+'</div><button class="go" onclick="nxt()" '+(lk?'':'disabled')+'>'+(i+1===n?'Finish':'Next →')+'</button>'}
+function view(){
+ const a=A[S.step],s=S.st[S.step];
+ if(S.rev){const r=S.rev;if(r.done)return '<div class="card"><h2>Reinforcement complete</h2><div class="big-stamp">CLEARED</div><div class="fb" style="justify-content:center">You practised all your missed questions. Well done!</div><div class="row"><button class="go alt" onclick="endRev()">Back to my results</button></div></div>';const it=r.list[r.i];return '<div class="card"><div class="meta"><span>Reinforcement · '+it.a.n+'</span><span class="mono">'+(r.i+1)+' / '+r.list.length+'</span></div>'+qcard(it.a,it.q,s,r.pk!==null,r.pk,r.list.length,r.i,true)+'</div>'}
+ if(a.type==='mc'){const q=a.q[s.i],n=a.q.length;
+  if(s.done)return '<div class="card"><h2>'+a.n+'</h2><div class="big-stamp">'+s.sc+' / '+n+'</div><div class="fb" style="justify-content:center">'+(s.sc===n?'Perfect! Cleared for take-off!':s.sc>=n-1?'Well done!':'Good try! Play again.')+'</div><div class="row"><button class="go alt" onclick="retry()">Play again</button><button class="go" onclick="go('+(S.step+1)+')">Next gate →</button></div></div>';
+  return '<div class="card"><div class="meta"><span>'+a.n+' · '+a.min+' min</span><span class="mono">Q '+(s.i+1)+'/'+n+' · MILES '+s.sc+'</span></div>'+qcard(a,q,s,s.pk!==null,s.pk,n,s.i,false)+'</div>'}
+ const t=total(),gr=GR.find(g=>t>=g[0]),M=missed(),rows=A.slice(0,RS).map((x,k)=>sec(k)),weak=rows.filter(r=>r.d>0&&r.m<r.t).map(r=>r.n.replace(/^\d · /,''));
+ const done=rows.reduce((x,r)=>x+r.d,0);
+ return '<div class="card"><div class="meta"><span>'+a.n+' · '+a.min+' min</span><span class="mono">FINAL BOARDING</span></div><div class="big-stamp" style="font-size:clamp(46px,8vw,84px)">'+t+' / 20</div><div class="fb" style="justify-content:center;text-align:center">Grade: <b style="font-family:monospace;font-size:1.3em">'+gr[1]+'</b> · '+gr[2]+'</div>'+(done<20?'<div class="learn">You answered '+done+' of 20 questions. Go back to the parts you have not finished to improve your mark!</div>':'')+'<div class="rs">'+rows.map(r=>'<div>'+r.n+'<br><b>'+r.m+' / '+r.t+'</b></div>').join('')+'</div>'+(weak.length?'<div class="learn"><b>Feedback:</b> Practise again: '+weak.join(', ')+'.</div>':(done===20?'<div class="learn"><b>Feedback:</b> Perfect in every part. Congratulations on finishing Unit 3!</div>':''))+(M.length?'<div class="miss"><b>My missed questions (with the correct answers):</b><br>'+M.map(m=>'• '+m.q.pr.replace(/<[^>]+>/g,'')+' → <b>'+m.q.o[m.q.a].t+'</b>').join('<br>')+'</div><div class="row"><button class="go alt" onclick="startRev()">Practise my missed questions</button></div>':'')+'<div class="row"><button class="go" onclick="go(0)">Start again from Gate 1</button></div><div class="credit" style="color:#101828">Created by T.Badria Alfalahi</div></div>'}
+function render(){
+ const L=A.length-1;
+ document.getElementById('nav').innerHTML='<span>Choose your gate:</span>'+A.map((a,k)=>'<button class="'+(k===S.step?'on':'')+'" onclick="go('+k+')">'+a.n+'</button>').join('');
+ document.getElementById('stars').textContent=stars()+' / 20';
+ document.getElementById('pl').style.left='calc('+(S.step/L*100)+'% - '+(S.step/L*56)+'px)';
+ document.getElementById('stations').innerHTML=A.map((a,k)=>'<span class="st'+(k<=S.step?' on':'')+'" style="left:'+(k/L*100)+'%">'+(k+1)+'</span>').join('');
+ document.getElementById('main').innerHTML=view()}
+render();
+</script></body></html>
